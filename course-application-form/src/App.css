@@ -47,7 +47,6 @@
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-
 h1 {
   text-align: center;
   color: #333;
@@ -65,7 +64,7 @@ input, select, textarea {
   font-size: 16px;
 }
 
-
+/* Кнопка Submit */
 button {
   width: 100%;
   padding: 10px;
@@ -89,9 +88,29 @@ div.error {
   font-size: 12px;
   margin-top: -10px;
   margin-bottom: 15px;
+  animation: shake 0.3s ease;
+}
+
+
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  50% { transform: translateX(5px); }
+  75% { transform: translateX(-5px); }
+  100% { transform: translateX(0); }
 }
 
 
 input:invalid, select:invalid, textarea:invalid {
+  border-color: red;
+}
+
+
+input:invalid, select:invalid, textarea:invalid {
+  animation: shake 0.3s ease;
+}
+
+
+input:focus:invalid, select:focus:invalid, textarea:focus:invalid {
   border-color: red;
 }
